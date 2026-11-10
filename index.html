@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>智能体评审登录</title>
+<style>
+*{box-sizing:border-box;font-family:system-ui}
+body{display:flex;align-items:center;justify-content:center;height:95vh;background:#f4f7fa;margin:0}
+.box{width:360px;padding:32px;background:#fff;border-radius:12px;box-shadow:0 4px 16px #00000015}
+h2{text-align:center;margin-top:0}
+input{width:100%;padding:12px;margin:8px 0;border:1px #ddd solid;border-radius:8px;font-size:16px}
+button{width:100%;padding:12px;margin-top:12px;background:#2563eb;color:#fff;border:0;border-radius:8px;font-size:16px;cursor:pointer}
+.err{color:red;text-align:center;display:none}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>评审入口登录</h2>
+<form id="loginForm">
+<input type="text" id="user" placeholder="账号" required>
+<input type="password" id="pass" placeholder="密码" required>
+<div class="err" id="err">账号或密码错误</div>
+<button type="submit">进入智能体</button>
+</form>
+</div>
+<script>
+document.getElementById('loginForm').onsubmit = function(e) {
+  e.preventDefault();
+  const user = document.getElementById('user').value;
+  const pass = document.getElementById('pass').value;
+  if(user === 'aicompetition' && pass === 'linda1234') {
+    window.location.href = 'https://kechuangrong-techfin-88303.app.workbuddy.host/agent/?sharecode=NVPENN3YOR';
+  } else {
+    document.getElementById('err').style.display = 'block';
+  }
+}
+</script>
+</body>
+</html>
